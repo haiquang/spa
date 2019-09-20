@@ -1,0 +1,4 @@
+{
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "beautify.tabSize": 2
+}

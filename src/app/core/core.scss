@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Anitha';
+  src: url('../../assets/fonts/Anitha.eot');
+  src: url('../../assets/fonts/Anitha.eot') format('embedded-opentype'),
+       url('../../assets/fonts/Anitha.woff2') format('woff2'),
+       url('../../assets/fonts/Anitha.woff') format('woff'),
+       url('../../assets/fonts/Anitha.ttf') format('truetype'),
+       url('../../assets/fonts/Anitha.svg#Anitha') format('svg');
+}
+
+$spa-color:         rgba(175,143,120,1);
+$spa-font-family:     'Brandon Grotesque';
+$spa-text-color:     rgba(66,66,66,1);
+
+
+@mixin width-line($size) {
+  .wl-#{$size} {
+    width: $size * 1px;
+    height: 1px;
+  }
+}
+
+@mixin dynWidths($size-list) {
+  @each $size in $size-list {
+    @include width-line($size)
+  }
+}
+
+@mixin spaText($size) {
+  .spa-text-#{$size} {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: (16px + (5px*$size));
+    text-align: left;
+    font-family: 'Brandon Grotesque';
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+@mixin dynSpaText($size-list) {
+  @each $size in $size-list {
+    @include spaText($size)
+  }
+}
+
