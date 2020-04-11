@@ -8,7 +8,7 @@ import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  @ViewChild('videoArea') videoArea;
+  @ViewChild('videoArea', { static: true }) videoArea;
 
   scrollYTransform: string;
 
