@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "spa": {
+    "wedding": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": "dist/spa",
+            "outputPath": "dist/wedding",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -67,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "spa:build"
+            "browserTarget": "wedding:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "spa:build:production"
+              "browserTarget": "wedding:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spa:build"
+            "browserTarget": "wedding:build"
           }
         },
         "test": {
@@ -112,7 +111,7 @@
         }
       }
     },
-    "spa-e2e": {
+    "wedding-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -121,11 +120,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "spa:serve"
+            "devServerTarget": "wedding:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "spa:serve:production"
+              "devServerTarget": "wedding:serve:production"
             }
           }
         },
@@ -141,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "spa"
+  "defaultProject": "wedding",
+  "cli": {
+    "analytics": "2a5d015c-019c-4a66-acc5-411e23496a89"
+  }
 }

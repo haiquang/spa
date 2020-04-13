@@ -1,0 +1,30 @@
+.couple__view {
+  position: relative;
+  z-index: 51;
+  padding: 120px 120px;
+  background-color: white;
+
+  .introduce {
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      height: 400px;
+    }
+
+    .groom, .bride {
+      display: flex;
+      flex-direction: row;
+
+      & > div {
+        flex: 1;
+      }
+    }
+
+    .bride {
+      .signature {
+        float: right;
+      }
+    }
+  }
+}
