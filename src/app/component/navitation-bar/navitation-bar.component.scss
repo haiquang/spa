@@ -1,6 +1,8 @@
+@import 'variable';
+
 .navigation__header {
   .navigation__icon {
-    font-family: "Lobster";
+    @include font-lobster;
     display: flex;
     width: 30%;
     color: transparentize(green, 0.6);
@@ -33,7 +35,7 @@
       justify-content: center;
 
       &:hover {
-        color: var(--green);
+        color: $green;
       }
     }
   }

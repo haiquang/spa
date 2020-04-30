@@ -1,4 +1,5 @@
-$green: green;
+@import 'variable';
+
 .photo-slider__view {
   min-height: 700px;
   height: calc(100vh - 90px);
@@ -20,7 +21,7 @@ $green: green;
     align-items: center;
 
     .couple-name {
-      font-family: "Lobster";
+      @include font-lobster;
       font-size: 90px;
       font-size: calc-rem-value(90);
       margin: 0 0 0.4em;
@@ -84,7 +85,7 @@ $green: green;
     }
 
     h4 {
-      font-family: "Lobster";
+      @include font-lobster;
       font-size: 40px;
       font-size: calc-rem-value(40);
       color: #fff;

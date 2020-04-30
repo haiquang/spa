@@ -1,3 +1,5 @@
+@import 'variable';
+
 .couple__view {
   position: relative;
   z-index: 51;
@@ -18,6 +20,36 @@
 
       & > div {
         flex: 1;
+      }
+
+      .image {
+        background-color: $grey;
+      }
+
+      .inner-view {
+        @include font-doris;
+        padding: 0px 55px;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        flex-direction: column;
+
+        .title {
+          letter-spacing: 5px;
+          font-size: 2em;
+          font-weight: bold;
+          padding: 20px 0;
+          text-transform: uppercase;
+        }
+
+        .content {
+          font-size: 1.2em;
+        }
+
+        .signature {
+          padding: 20px 0;
+          font-size: 1.5em;
+        }
       }
     }
 

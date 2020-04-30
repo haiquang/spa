@@ -5,13 +5,22 @@
 // $primary: mat-palette($mat-indigo);
 // $accent:  mat-palette($mat-pink, A200, A100, A400);
 // $theme: mat-light-theme($primary, $accent);
-$green-pallet: mat-palette($mat-green, 600);
-$white: white;
+$green-pallet: mat-palette($mat-green, 400);
+$grey-pallet: mat-palette($mat-gray, 300);
 $green: mat-color($green-pallet);
+$grey: mat-color($grey-pallet);
 
-:root {
-  --light-green: #{mat-color($mat-light-green)};
-  --green:  #{mat-color($green-pallet)};
+@mixin font-doris {
+  font-family: "Doris";
 }
+
+@mixin font-lobster {
+  font-family: "Lobster";
+}
+
+@mixin font-dancing {
+  font-family: "Dancing";
+}
+
 
 
