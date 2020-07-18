@@ -9,7 +9,8 @@ import { PhotoSliderComponent } from '../component/photo-slider/photo-slider.com
 import { CoupleComponent } from '../component/couple/couple.component';
 import { CountdownComponent } from '../component/countdown/countdown.component';
 import { EventComponent } from '../component/event/event.component';
-
+import { WishesComponent } from '../component/wishes/wishes.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -17,12 +18,15 @@ import { EventComponent } from '../component/event/event.component';
     PhotoSliderComponent,
     CoupleComponent,
     CountdownComponent,
-    EventComponent
+    EventComponent,
+    WishesComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class HomeModule { }

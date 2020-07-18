@@ -1,0 +1,156 @@
+@import 'variable';
+
+.wishes__view {
+  min-height: 700px;
+  height: calc(100vh - 90px);
+  position: relative;
+
+  .wishes__matcard_view {
+    background-color: black;
+
+    .wishes-header {
+      position: relative;
+      height: 200px;
+      margin-top: 30px;
+
+      .vertical-line {
+        width: 18px;
+        height: 42px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+
+        span {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          background: transparentize($white, 0.8);
+          width: 2px;
+          height: 42px;
+          top: 17px;
+
+          i {
+            position: absolute;
+            left: -34px;
+            top: -63px;
+
+            &:before {
+              font-family: Flaticon;
+              margin: 0;
+              font-size: 65px;
+              font-size: calc-rem-value(65);
+              color: $white;
+              opacity: 0.4;
+            }
+          }
+        }
+
+        &:before {
+          content: "";
+          background: transparentize($white, 0.8);
+          width: 45px;
+          height: 2px;
+          top: 16px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .wishes__text {
+        @include font-dancing;
+        font-weight: bold;
+        letter-spacing: 10px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: transparentize($white, 0.9);
+        font-size: 46px;
+        font-size: calc-rem-value(46);
+        color: $white;
+        margin: 59px 0 0;
+        padding: 10px 25px 5px;
+        border-top: 2px solid transparentize($white, 0.9);
+        border-bottom: 2px solid transparentize($white, 0.9);
+        display: inline-block;
+        text-transform: capitalize;
+      }
+    }
+
+    .wishes-content {
+      padding: 0 120px;
+      mat-card {
+        &.outside {
+          background: transparentize($white, 0.8);
+          border-top: 2px solid transparentize($white, 0.9);
+          border-bottom: 2px solid transparentize($white, 0.9);
+        }
+
+        &.inside {
+          background: transparent;
+          // box-shadow: none;
+          width: 500px;
+          margin: 0 auto;
+        }
+      }
+
+
+      .row__1 {
+        margin: 0 auto;
+        width: 100%;
+
+        td {
+          width: 50%;
+
+          &:first-child {
+            padding-right: 20px;
+          }
+
+          &:last-child {
+            padding-left: 20px;
+          }
+
+          mat-form-field {
+            width: 100%;
+
+            button {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .row__2 {
+        color: $white;
+        margin: 0 auto;
+
+        .margin {
+          margin: 10px;
+        }
+      }
+
+    }
+
+  }
+}
+
+::ng-deep .mat-form-field-label, input {
+  color: $white !important;
+}
+
+ ::ng-deep .mat-form-field-hide-placeholder .mat-form-field-label {
+  /*change color of label*/
+  color: transparentize($white, 0.7) !important;
+ }
+
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: $white !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: $white !important;;
+}

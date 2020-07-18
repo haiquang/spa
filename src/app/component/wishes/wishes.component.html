@@ -1,0 +1,65 @@
+<div class="wishes__view">
+
+  <mat-card class="wishes__matcard_view">
+    <div class="wishes-header">
+      <div class="vertical-line">
+        <span>
+          <i class="fi flaticon-two"></i>
+        </span>
+      </div>
+      <div class="wishes__text">
+        Lời chúc
+      </div>
+    </div>
+    <div class="wishes-content">
+      <mat-card class="outside">
+
+        <mat-card class="inside">
+          <table class="row__1" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field>
+                  <mat-label>Họ Và Tên</mat-label>
+                  <input matInput required type="text" [(ngModel)]="name">
+                  <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''" color="basic">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field>
+                  <mat-label>Biệt Danh</mat-label>
+                  <input matInput type="text" [(ngModel)]="nickname">
+                  <button mat-button *ngIf="nickname" matSuffix mat-icon-button aria-label="Clear" (click)="nickname=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+
+          <div class="row__2">
+            <mat-label class="margin">Giới tính </mat-label>
+            <mat-radio-group aria-label="Select an option" [formControl]="disableSelect">
+              <mat-radio-button class="margin" value="1">Nam</mat-radio-button>
+              <mat-radio-button class="margin" value="2">Nữ</mat-radio-button>
+              <mat-radio-button class="margin" value="3" >Khác</mat-radio-button>
+            </mat-radio-group>
+            <mat-form-field appearance="fill" *ngIf="disableSelect.value == 3">
+              <mat-label>Choose an option</mat-label>
+              <mat-select [formControl]="select">
+                <mat-option></mat-option>
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </mat-card>
+
+      </mat-card>
+    </div>
+
+  </mat-card>
+</div>

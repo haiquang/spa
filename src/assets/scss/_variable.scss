@@ -9,6 +9,7 @@ $green-pallet: mat-palette($mat-green, 400);
 $grey-pallet: mat-palette($mat-gray, 300);
 $green: mat-color($green-pallet);
 $grey: mat-color($grey-pallet);
+$white: #fff;
 
 @mixin font-doris {
   font-family: "Doris";

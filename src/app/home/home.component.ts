@@ -8,17 +8,10 @@ import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  @ViewChild('videoArea', { static: true }) videoArea;
 
   scrollYTransform: string;
 
   constructor() { }
-
-  @HostListener('window:scroll', ['$event']) 
-    scrollHandler(event) {
-      this.scrollYTransform = '' + (200 - window.scrollY + (window.scrollY*0.3)) + 'px';
-      this.videoArea.nativeElement.style.transform = "translate3d(0," + this.scrollYTransform + ", 0)";
-    }
 
   ngOnInit() {
   }

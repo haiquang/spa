@@ -147,6 +147,9 @@
   },
   "defaultProject": "wedding",
   "cli": {
-    "analytics": "2a5d015c-019c-4a66-acc5-411e23496a89"
+    "analytics": "839fcb30-5203-49c1-9c51-fdcd52111aab",
+    "warnings": {
+      "versionMismatch": false
+    }
   }
 }
