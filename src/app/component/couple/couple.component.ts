@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-couple',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoupleComponent implements OnInit {
 
-  constructor() { }
+  constructor(public myElement: ElementRef) { }
 
   ngOnInit(): void {
   }

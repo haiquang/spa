@@ -3,27 +3,33 @@
 .couple__view {
   position: relative;
   z-index: 51;
-  padding: 120px 120px;
+  padding: 120px 60px;
   background-color: white;
 
   .introduce {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 
     & > div {
-      height: 400px;
+      min-height: 400px;
     }
 
     .groom, .bride {
       display: flex;
-      flex-direction: row;
+      width: 100%;
 
       & > div {
         flex: 1;
+        width: 50%;
       }
 
       .image {
         background-color: $grey;
+        @media screen and (max-width: 575px){
+          & {
+            display: none;
+          }
+        }
       }
 
       .inner-view {

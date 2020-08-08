@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class WishesComponent implements OnInit {
 
   disableSelect = new FormControl(false);
   select = new FormControl();
-  constructor() { }
+  constructor(public myElement: ElementRef) { }
 
   ngOnInit(): void {
   }

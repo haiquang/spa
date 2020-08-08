@@ -11,6 +11,9 @@ import { CountdownComponent } from '../component/countdown/countdown.component';
 import { EventComponent } from '../component/event/event.component';
 import { WishesComponent } from '../component/wishes/wishes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -24,9 +27,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialModule,
     FormsModule,
+    HttpClientModule,
+    MaterialModule,
     ReactiveFormsModule,
+    FontAwesomeModule
   ]
 })
 export class HomeModule { }

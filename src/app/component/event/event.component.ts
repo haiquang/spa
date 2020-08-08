@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { faClock, faMapMarker } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-event',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
-  constructor() { }
+  faMapMarker = faMapMarker;
+  faClock = faClock;
+  constructor(public myElement: ElementRef) { }
 
   ngOnInit(): void {
+    console.log(this.myElement.nativeElement);
   }
 
 }

@@ -1,11 +1,23 @@
 @import 'variable';
 
 .navigation__header {
+
+  mat-toolbar {
+    &.fixed {
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      background-color: $white;
+      border-bottom: 1px solid $green-dark;
+      box-shadow: 1px 2px 3px  $green-dark;
+    }
+  }
+
   .navigation__icon {
     @include font-lobster;
     display: flex;
     width: 30%;
-    color: transparentize(green, 0.6);
+    color: $green-dark;
     margin-left: 20px;
     padding: 10px 0;
 

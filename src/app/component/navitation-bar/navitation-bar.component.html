@@ -1,5 +1,5 @@
 <div id="header" class="navigation__header">
-  <mat-toolbar>
+  <mat-toolbar [ngClass]="{'fixed': fixedView}">
     <mat-toolbar-row>
       <div class="navigation__icon">
         <span>Q</span>
@@ -7,12 +7,12 @@
         <span>T</span>
       </div>
       <div class="navitation-block__button">
-        <div >Home</div>
-        <div >Couple</div>
-        <div >Story</div>
-        <div >Events</div>
-        <div >Gallery</div>
-        <div class="grey">RSVP</div>
+        <div (click)="onScrollTo('home')">Đầu Trang</div>
+        <div (click)="onScrollTo('couple')">Dâu Rể</div>
+        <div (click)="onScrollTo('countdown')">CountDown</div>
+        <div (click)="onScrollTo('event')">Sự kiện</div>
+        <div (click)="onScrollTo('album')">Thư Viện Ảnh</div>
+        <div (click)="onScrollTo('wish')">Lời Chúc</div>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

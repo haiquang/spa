@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-countdown',
@@ -10,7 +10,7 @@ export class CountdownComponent implements OnInit {
   targetDate = 1601805600000;
   countDownTime: any;
 
-  constructor() { }
+  constructor(public myElement: ElementRef) { }
 
   ngOnInit(): void {
     this.countDownTime = {

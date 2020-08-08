@@ -2,11 +2,27 @@
 
 .wishes__view {
   min-height: 700px;
-  height: calc(100vh - 90px);
   position: relative;
 
+  .background {
+    position: absolute;
+    background: url('../../../assets/photo/517A7706.JPG') no-repeat top center scroll;
+    background-size: cover;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    // background-color: transparentize($color: #000000, $amount: 0.5)
+
+    img {
+      width: 100%;
+    }
+  }
+
   .wishes__matcard_view {
-    background-color: black;
+    // background-color: black;
+    // position: relative;
+    z-index: 2;
+    background: transparentize($color: #000000, $amount: 0.3);
 
     .wishes-header {
       position: relative;
@@ -75,11 +91,20 @@
         border-bottom: 2px solid transparentize($white, 0.9);
         display: inline-block;
         text-transform: capitalize;
+        text-align: center;
       }
     }
 
     .wishes-content {
       padding: 0 120px;
+      margin: 0 0 120px 0;
+
+      @media screen and (max-width: 765px) {
+        & {
+          padding: 0 0;
+        }
+      }
+
       mat-card {
         &.outside {
           background: transparentize($white, 0.8);
@@ -89,8 +114,8 @@
 
         &.inside {
           background: transparent;
-          // box-shadow: none;
-          width: 500px;
+          box-shadow: none;
+          // width: 600px;
           margin: 0 auto;
         }
       }
@@ -99,20 +124,14 @@
       .row__1 {
         margin: 0 auto;
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
 
-        td {
-          width: 50%;
-
-          &:first-child {
-            padding-right: 20px;
-          }
-
-          &:last-child {
-            padding-left: 20px;
-          }
+        & > div {
+          flex: 1;
 
           mat-form-field {
-            width: 100%;
+            width: 90%;
 
             button {
               color: $white;
@@ -123,10 +142,43 @@
 
       .row__2 {
         color: $white;
-        margin: 0 auto;
+        margin: 20px 0;
 
         .margin {
+          &:first-child {
+            margin-left: 0px;
+          }
           margin: 10px;
+        }
+
+        .select-option {
+
+        }
+
+        .mat-radio-outer-circle {
+          border-color: $green !important;
+        }
+
+        .mat-radio-inner-circle {
+          background-color: $green !important;
+        }
+      }
+
+      .row__3 {
+        .comment {
+          width: 100%;
+        }
+      }
+
+      .row__4 {
+        position: relative;
+        height: 50px;
+
+        button {
+          background-color: transparentize($white, 0.6);
+          color: $white;
+          position: absolute;
+          right: 0;
         }
       }
 
@@ -135,13 +187,13 @@
   }
 }
 
-::ng-deep .mat-form-field-label, input {
+::ng-deep .mat-form-field-label, input, textarea {
   color: $white !important;
 }
 
  ::ng-deep .mat-form-field-hide-placeholder .mat-form-field-label {
   /*change color of label*/
-  color: transparentize($white, 0.7) !important;
+  color: transparentize($white, 0.5) !important;
  }
 
 
@@ -153,4 +205,16 @@
 ::ng-deep.mat-form-field-ripple {
  /*change color of underline when focused*/
  background-color: $white !important;;
+}
+
+::ng-deep .select-option .mat-select-value {
+  color: $white;
+}
+
+::ng-deep .mat-radio-checked .mat-radio-outer-circle {
+  border-color: $green !important;
+}
+
+::ng-deep .mat-radio-checked .mat-radio-inner-circle {
+  background-color: $green !important;
 }

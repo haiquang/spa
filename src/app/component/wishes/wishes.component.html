@@ -1,5 +1,9 @@
 <div class="wishes__view">
 
+
+  <div class="background">
+    <!-- <img src="../../../assets/photo/517A7706.JPG"> -->
+  </div>
   <mat-card class="wishes__matcard_view">
     <div class="wishes-header">
       <div class="vertical-line">
@@ -15,28 +19,26 @@
       <mat-card class="outside">
 
         <mat-card class="inside">
-          <table class="row__1" cellspacing="0">
-            <tr>
-              <td>
-                <mat-form-field>
-                  <mat-label>Họ Và Tên</mat-label>
-                  <input matInput required type="text" [(ngModel)]="name">
-                  <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''" color="basic">
-                    <mat-icon>close</mat-icon>
-                  </button>
-                </mat-form-field>
-              </td>
-              <td>
-                <mat-form-field>
-                  <mat-label>Biệt Danh</mat-label>
-                  <input matInput type="text" [(ngModel)]="nickname">
-                  <button mat-button *ngIf="nickname" matSuffix mat-icon-button aria-label="Clear" (click)="nickname=''">
-                    <mat-icon>close</mat-icon>
-                  </button>
-                </mat-form-field>
-              </td>
-            </tr>
-          </table>
+          <div class="row__1">
+            <div>
+              <mat-form-field>
+                <mat-label>Họ Và Tên</mat-label>
+                <input matInput required type="text" [(ngModel)]="name">
+                <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''" color="basic">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field>
+                <mat-label>Biệt Danh</mat-label>
+                <input matInput type="text" [(ngModel)]="nickname">
+                <button mat-button *ngIf="nickname" matSuffix mat-icon-button aria-label="Clear" (click)="nickname=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
 
           <div class="row__2">
             <mat-label class="margin">Giới tính </mat-label>
@@ -45,7 +47,7 @@
               <mat-radio-button class="margin" value="2">Nữ</mat-radio-button>
               <mat-radio-button class="margin" value="3" >Khác</mat-radio-button>
             </mat-radio-group>
-            <mat-form-field appearance="fill" *ngIf="disableSelect.value == 3">
+            <!-- <mat-form-field class="select-option" appearance="fill" *ngIf="disableSelect.value == 3">
               <mat-label>Choose an option</mat-label>
               <mat-select [formControl]="select">
                 <mat-option></mat-option>
@@ -53,7 +55,18 @@
                 <mat-option value="option2">Option 2</mat-option>
                 <mat-option value="option3">Option 3</mat-option>
               </mat-select>
+            </mat-form-field> -->
+          </div>
+
+          <div class="row__3">
+            <mat-form-field class="comment">
+              <mat-label>Lời Chúc</mat-label>
+              <textarea matInput rows="1" matTextareaAutosize></textarea>
             </mat-form-field>
+          </div>
+
+          <div class="row__4">
+            <button mat-stroked-button><strong>Gởi</strong></button>
           </div>
 
         </mat-card>
