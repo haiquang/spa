@@ -6,14 +6,43 @@
         <i class="fi flaticon-heart"></i>
         <span>T</span>
       </div>
-      <div class="navitation-block__button">
+      <div class="navigation-block__button" fxShow="true" fxHide.lt-md="true">
         <div (click)="onScrollTo('home')">Đầu Trang</div>
         <div (click)="onScrollTo('couple')">Dâu Rể</div>
         <div (click)="onScrollTo('countdown')">CountDown</div>
         <div (click)="onScrollTo('event')">Sự kiện</div>
-        <div (click)="onScrollTo('album')">Thư Viện Ảnh</div>
+        <div (click)="onScrollTo('gallery')">Thư Viện Ảnh</div>
         <div (click)="onScrollTo('wish')">Lời Chúc</div>
       </div>
+      <div class="navigation-side-menu" fxLayoutAlign="end" fxShow="true" fxHide.gt-sm="true">
+        <mat-icon [matMenuTriggerFor]="menu" aria-hidden="false" aria-label="menu icon">menu</mat-icon>
+      </div>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onScrollTo('home')">
+          <mat-icon class="text-color-green">home</mat-icon>
+          <span>Đầu Trang</span>
+        </button>
+        <button mat-menu-item (click)="onScrollTo('couple')">
+          <mat-icon class="text-color-green">group</mat-icon>
+          <span>Dâu Rể</span>
+        </button>
+        <button mat-menu-item (click)="onScrollTo('countdown')">
+          <mat-icon class="text-color-green">hourglass_top</mat-icon>
+          <span>CountDown</span>
+        </button>
+        <button mat-menu-item (click)="onScrollTo('event')">
+          <mat-icon class="text-color-green">event</mat-icon>
+          <span>Sự kiện</span>
+        </button>
+        <button mat-menu-item (click)="onScrollTo('gallery')">
+          <mat-icon class="text-color-green">collections</mat-icon>
+          <span>Thư Viện Ảnh</span>
+        </button>
+        <button mat-menu-item (click)="onScrollTo('wish')">
+          <mat-icon class="text-color-green">mail</mat-icon>
+          <span>Lời Chúc</span>
+        </button>
+      </mat-menu>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>

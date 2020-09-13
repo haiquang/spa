@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navitation-bar',
@@ -8,6 +8,9 @@ import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/
 export class NavitationBarComponent implements OnInit {
 
   @Output() scrollTo = new EventEmitter();
+  @Output() toggleMenu = new EventEmitter();
+
+  toggleOpened: any = false;
   fixedView = false;
 
   constructor() { }
@@ -26,6 +29,10 @@ export class NavitationBarComponent implements OnInit {
     } else {
       this.fixedView = false;
     }
+  }
+
+  toggle() {
+    this.toggleMenu.emit();
   }
 
 }

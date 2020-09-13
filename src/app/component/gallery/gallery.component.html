@@ -1,0 +1,29 @@
+<div class="gallery__view">
+  <mat-card class="container">
+    <div class="gallery-header">
+      <div class="vertical-line">
+        <span>
+          <i class="fi flaticon-two"></i>
+        </span>
+      </div>
+      <div class="gallery__text">
+        Thư Viện Ảnh
+      </div>
+    </div>
+    <div class="gallery-content">
+      <div class="select-mode">
+        <button mat-raised-button [ngClass]="{'active': !mode}" (click)="setFilter(false)">Rút Gọn</button>
+        <button mat-raised-button [ngClass]="{'active': mode}" (click)="setFilter(true)">Tất Cả</button>
+      </div>
+      <div class="grid">
+        <mat-card class="grid-item" *ngFor="let item of items; let i = index" [ngClass]="{'even': item.number % 3 === 0}">
+          <img [src]="item.src" (load)="loaded()"/>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<div>
+  <!-- <img [src]="targetImg" /> -->
+</div>

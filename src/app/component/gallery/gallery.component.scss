@@ -1,0 +1,127 @@
+@import 'variable';
+
+.gallery__view {
+  padding: 120px 0px;
+
+  .container {
+    background-color: $light-grey;
+
+    .gallery-header {
+      position: relative;
+      min-height: 200px;
+      margin-top: 30px;
+      text-align: center;
+
+      .vertical-line {
+        width: 18px;
+        height: 42px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+
+        span {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          background: transparentize($green-dark, 0.8);
+          width: 2px;
+          height: 42px;
+          top: 17px;
+
+          i {
+            position: absolute;
+            left: -34px;
+            top: -63px;
+
+            &:before {
+              font-family: Flaticon;
+              margin: 0;
+              font-size: 65px;
+              font-size: calc-rem-value(65);
+              color: $green-dark;
+              opacity: 0.6;
+            }
+          }
+        }
+
+        &:before {
+          content: "";
+          background: transparentize($green-dark, 0.8);
+          width: 45px;
+          height: 2px;
+          top: 16px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .gallery__text {
+        @include font-dancing;
+        font-weight: bold;
+        letter-spacing: 10px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: transparentize($green-dark, 0.9);
+        font-size: 46px;
+        font-size: calc-rem-value(46);
+        color: #848383;
+        margin: 59px 0 0;
+        padding: 10px 25px 5px;
+        border-top: 2px solid transparentize($green-dark, 0.9);
+        border-bottom: 2px solid transparentize($green-dark, 0.9);
+        display: inline-block;
+        text-transform: capitalize;
+
+        @media screen and (max-width: 624px){
+          & {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+
+    .gallery-content {
+      .select-mode {
+        button {
+          margin: 0 5px;
+
+          &.active {
+            background-color: $green-dark;
+            color: $white;
+          }
+        }
+      }
+
+      .grid {
+        margin-top: 20px;
+
+        .grid-item {
+          width: 32%;
+          padding: 2px !important;
+          margin: 1px !important;
+
+          @media screen and (max-width: 375px){
+            & {
+              width: 30%;
+            }
+          }
+
+          img {
+            display: block;
+            max-width: 100%;
+          }
+
+          &:hover {
+            transition: transform .2s;
+            transform: scale(1.2);
+            z-index: 1000;
+          }
+        }
+      }
+
+    }
+  }
+}

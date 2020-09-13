@@ -1,9 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
-import { CoupleComponent } from '../component/couple/couple.component';
-import { PhotoSliderComponent } from '../component/photo-slider/photo-slider.component';
-import { CountdownComponent } from '../component/countdown/countdown.component';
-import { EventComponent } from '../component/event/event.component';
-import { WishesComponent } from '../component/wishes/wishes.component';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +9,10 @@ import { WishesComponent } from '../component/wishes/wishes.component';
 export class HomeComponent implements OnInit {
 
   scrollYTransform: string;
+  items: any;
 
-  constructor(private elementRef: ElementRef) { }
+  @ViewChild('sidenav') sidenav: any;
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
   }
@@ -36,6 +33,9 @@ export class HomeComponent implements OnInit {
         case 'event':
           el = this.elementRef.nativeElement.querySelector('.event__view');
           break;
+        case 'gallery':
+          el = this.elementRef.nativeElement.querySelector('.gallery__view');
+          break;
         case 'wish':
           el = this.elementRef.nativeElement.querySelector('.wishes__view');
           break;
@@ -45,5 +45,9 @@ export class HomeComponent implements OnInit {
       }
       el.scrollIntoView();
     }, 100);
+  }
+
+  toggle() {
+    this.sidenav.toggle();
   }
 }

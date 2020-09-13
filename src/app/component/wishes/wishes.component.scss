@@ -92,6 +92,12 @@
         display: inline-block;
         text-transform: capitalize;
         text-align: center;
+
+        @media screen and (max-width: 624px){
+          & {
+            font-size: 30px;
+          }
+        }
       }
     }
 
@@ -156,11 +162,11 @@
         }
 
         .mat-radio-outer-circle {
-          border-color: $green !important;
+          border-color: $green-dark !important;
         }
 
         .mat-radio-inner-circle {
-          background-color: $green !important;
+          background-color: $green-dark !important;
         }
       }
 

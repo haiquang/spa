@@ -33,7 +33,7 @@
       margin-right: 10px;
     }
   }
-  .navitation-block__button {
+  .navigation-block__button {
     display: flex;
     flex-direction: row;
     width: 70%;
@@ -47,8 +47,19 @@
       justify-content: center;
 
       &:hover {
-        color: $green;
+        color: $green-dark;
       }
     }
   }
+
+  .navigation-side-menu {
+    width: 100%;
+    color: $green-dark;
+    cursor: pointer;
+  }
+
+}
+
+.text-color-green {
+  color: $green-dark !important;
 }

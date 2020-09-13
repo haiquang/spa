@@ -42,10 +42,10 @@
 
           <div class="row__2">
             <mat-label class="margin">Giới tính </mat-label>
-            <mat-radio-group aria-label="Select an option" [formControl]="disableSelect">
-              <mat-radio-button class="margin" value="1">Nam</mat-radio-button>
-              <mat-radio-button class="margin" value="2">Nữ</mat-radio-button>
-              <mat-radio-button class="margin" value="3" >Khác</mat-radio-button>
+            <mat-radio-group aria-label="Select an option" [formControl]="disableSelect" [(ngModel)]="selectValue">
+              <mat-radio-button class="margin" value="nam">Nam</mat-radio-button>
+              <mat-radio-button class="margin" value="nu">Nữ</mat-radio-button>
+              <mat-radio-button class="margin" value="khac" >Khác</mat-radio-button>
             </mat-radio-group>
             <!-- <mat-form-field class="select-option" appearance="fill" *ngIf="disableSelect.value == 3">
               <mat-label>Choose an option</mat-label>
@@ -61,12 +61,12 @@
           <div class="row__3">
             <mat-form-field class="comment">
               <mat-label>Lời Chúc</mat-label>
-              <textarea matInput rows="1" matTextareaAutosize></textarea>
+              <textarea matInput rows="1" matTextareaAutosize [(ngModel)]="comment"></textarea>
             </mat-form-field>
           </div>
 
           <div class="row__4">
-            <button mat-stroked-button><strong>Gởi</strong></button>
+            <button mat-stroked-button (click)="submit()"><strong>Gởi</strong></button>
           </div>
 
         </mat-card>

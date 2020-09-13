@@ -10,9 +10,12 @@ import { CoupleComponent } from '../component/couple/couple.component';
 import { CountdownComponent } from '../component/countdown/countdown.component';
 import { EventComponent } from '../component/event/event.component';
 import { WishesComponent } from '../component/wishes/wishes.component';
+import { GalleryComponent } from '../component/gallery/gallery.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MdePopoverModule } from '@material-extended/mde';
+import { AlertComponent } from '../component/dialog/alertDialog/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +25,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CoupleComponent,
     CountdownComponent,
     EventComponent,
-    WishesComponent
+    WishesComponent,
+    GalleryComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     FormsModule,
-    HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FlexLayoutModule,
+    MdePopoverModule
   ]
 })
 export class HomeModule { }
