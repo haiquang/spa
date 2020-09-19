@@ -16,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MdePopoverModule } from '@material-extended/mde';
 import { AlertComponent } from '../component/dialog/alertDialog/alert/alert.component';
+import { PictureDetailComponent } from '../component/gallery/picture-detail/picture-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AlertComponent } from '../component/dialog/alertDialog/alert/alert.comp
     EventComponent,
     WishesComponent,
     GalleryComponent,
-    AlertComponent
+    AlertComponent,
+    PictureDetailComponent
   ],
   imports: [
     CommonModule,

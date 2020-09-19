@@ -1,6 +1,7 @@
 <h1 mat-dialog-title class="title">
   <div mat-button class="alert-icon">
-    <mat-icon color="warn" [inline]="true">highlight_off</mat-icon>
+    <mat-icon *ngIf="data.type === popup.ALERT" color="warn" [inline]="true">highlight_off</mat-icon>
+    <mat-icon *ngIf="data.type === popup.SUCCESS" color="primary" [inline]="true">check_box</mat-icon>
   </div>
   <div class="title-text">{{data.title}}</div>
 </h1>

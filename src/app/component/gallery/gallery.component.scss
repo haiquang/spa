@@ -102,6 +102,7 @@
           width: 32%;
           padding: 2px !important;
           margin: 1px !important;
+          display: inline-block;
 
           @media screen and (max-width: 375px){
             & {
@@ -118,6 +119,13 @@
             transition: transform .2s;
             transform: scale(1.2);
             z-index: 1000;
+          }
+
+          .spinner {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            place-items: center;
           }
         }
       }

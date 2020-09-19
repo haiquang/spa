@@ -9,8 +9,10 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: black;
-    opacity: 0.5;
+    background: url('../../../assets/photo/517A7659.jpg') no-repeat top center scroll;
+    background-size: cover;
+    z-index: 1;
+    // opacity: 0.5;
   }
 
   .couple-name-married__text {
@@ -19,6 +21,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    background: transparentize($color: #000000, $amount: 0.4);
+    z-index: 2;
 
     .couple-name {
       @include font-lobster;
@@ -32,8 +37,9 @@
     }
 
     .married-text {
-      font-size: 26px;
-      font-size: calc-rem-value(26);
+      font-size: 40px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: calc-rem-value(40);
       color: white;
       text-transform: uppercase;
       margin: 0;

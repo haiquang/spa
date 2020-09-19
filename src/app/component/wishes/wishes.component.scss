@@ -22,7 +22,7 @@
     // background-color: black;
     // position: relative;
     z-index: 2;
-    background: transparentize($color: #000000, $amount: 0.3);
+    background: transparentize($color: #000000, $amount: 0.2);
 
     .wishes-header {
       position: relative;
@@ -156,18 +156,6 @@
           }
           margin: 10px;
         }
-
-        .select-option {
-
-        }
-
-        .mat-radio-outer-circle {
-          border-color: $green-dark !important;
-        }
-
-        .mat-radio-inner-circle {
-          background-color: $green-dark !important;
-        }
       }
 
       .row__3 {
@@ -188,8 +176,13 @@
         }
       }
 
-    }
+      .alert {
+        &.alert-danger {
+          color: $warn;
+        }
+      }
 
+    }
   }
 }
 
@@ -215,12 +208,4 @@
 
 ::ng-deep .select-option .mat-select-value {
   color: $white;
-}
-
-::ng-deep .mat-radio-checked .mat-radio-outer-circle {
-  border-color: $green !important;
-}
-
-::ng-deep .mat-radio-checked .mat-radio-inner-circle {
-  background-color: $green !important;
 }

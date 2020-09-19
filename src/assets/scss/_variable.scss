@@ -1,6 +1,48 @@
 // Import library functions for theme creation.
 @import '~@angular/material/theming';
 
+$md-green: (
+    50 : #ecf3f1,
+    100 : #cfe1dd,
+    200 : #afcdc7,
+    300 : #8eb8b0,
+    400 : #76a99f,
+    500 : #5e9a8e,
+    600 : #569286,
+    700 : #4c887b,
+    800 : #427e71,
+    900 : #316c5f,
+    A100 : #b8ffee,
+    A200 : #85ffe2,
+    A400 : #52ffd6,
+    A700 : #39ffd0,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$app-primary: mat-palette($md-green, 500);
+$app-accent: mat-palette($mat-yellow, 500);
+$app-warn: mat-palette($mat-red, 500);
+
+// Custom Sass colors vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+
 // Define your application's custom theme.
 // $primary: mat-palette($mat-indigo);
 // $accent:  mat-palette($mat-pink, A200, A100, A400);
@@ -8,10 +50,10 @@
 $green-pallet: mat-palette($mat-green, 400);
 $grey-pallet: mat-palette($mat-gray, 300);
 $green: mat-color($green-pallet);
-$green-dark: #5e9a8e;
 $grey: mat-color($grey-pallet);
 $light-grey: #f9f9f9;
 $white: #fff;
+$green-dark: mat-color($app-primary); //#5E9A8E
 
 @mixin font-doris {
   font-family: "Doris";
@@ -24,6 +66,4 @@ $white: #fff;
 @mixin font-dancing {
   font-family: "Dancing";
 }
-
-
 

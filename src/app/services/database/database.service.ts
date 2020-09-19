@@ -36,9 +36,9 @@ export class DatabaseService {
     this.wishesDbs.remove();
   }
 
-  getImages() {
+  getImages(type) {
     const imageObservable = new Observable((observer) => {
-      this.storage.ref('images').listAll().subscribe((listImages) => {
+      this.storage.ref(type).listAll().subscribe((listImages) => {
         listImages.items.forEach(item => {
           this.images.push(item.getDownloadURL());
         });

@@ -7,7 +7,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 })
 export class CountdownComponent implements OnInit {
 
-  targetDate = 1601805600000;
+  targetDate = 1604745000000;
   countDownTime: any;
 
   constructor(public myElement: ElementRef) { }

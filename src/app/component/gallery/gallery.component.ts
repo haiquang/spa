@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DatabaseService } from 'src/app/services/database/database.service';
+import { PictureDetailComponent } from './picture-detail/picture-detail.component';
+import { AppConst } from 'src/app/constant/app-const';
 declare var Isotope: any;
 @Component({
   selector: 'app-gallery',
@@ -12,10 +15,11 @@ export class GalleryComponent implements OnInit {
   isotope: any;
   time: number;
   MAX_NUMBER = 3;
-  constructor(private database: DatabaseService) { }
+  imageLoaded = {};
+  constructor(private database: DatabaseService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.database.getImages().subscribe((data: Array<any>) => {
+    this.database.getImages(AppConst.IMAGE.ORIGINAL).subscribe((data: Array<any>) => {
       data.forEach((src) => {
         this.items.push({src, number: this.getRandomNum()});
       });
@@ -30,7 +34,7 @@ export class GalleryComponent implements OnInit {
         if (!this.mode) {
           this.isotope.arrange({filter: '.even'});
         }
-      }, 1000);
+      }, 500);
     });
   }
 
@@ -45,17 +49,23 @@ export class GalleryComponent implements OnInit {
     }
   }
 
-  loaded() {
+  loaded(index) {
+    this.imageLoaded[index] = true;
     if (this.time) {
       clearTimeout(this.time);
     }
     this.time = setTimeout(() => {
       this.isotope.layout();
-    }, 1000);
+    }, 100);
   }
 
-  showImage() {
-
+  showImage(index) {
+    // const dialogRef = this.dialog.open(PictureDetailComponent, {
+    //   data: {
+    //     index: index,
+    //     items: this.items
+    //   }
+    // });
   }
 
   getRandomNum() {

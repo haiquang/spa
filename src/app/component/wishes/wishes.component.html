@@ -18,13 +18,13 @@
     <div class="wishes-content">
       <mat-card class="outside">
 
-        <mat-card class="inside">
+        <mat-card class="inside" [formGroup]="wishForm">
           <div class="row__1">
             <div>
               <mat-form-field>
                 <mat-label>Họ Và Tên</mat-label>
-                <input matInput required type="text" [(ngModel)]="name">
-                <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''" color="basic">
+                <input matInput required type="text" formControlName="name">
+                <button mat-button *ngIf="wishForm.controls['name'].value" matSuffix mat-icon-button aria-label="Clear" (click)="removeField('name')" color="basic">
                   <mat-icon>close</mat-icon>
                 </button>
               </mat-form-field>
@@ -32,8 +32,8 @@
             <div>
               <mat-form-field>
                 <mat-label>Biệt Danh</mat-label>
-                <input matInput type="text" [(ngModel)]="nickname">
-                <button mat-button *ngIf="nickname" matSuffix mat-icon-button aria-label="Clear" (click)="nickname=''">
+                <input matInput required type="text" formControlName="nickname">
+                <button mat-button *ngIf="wishForm.controls['nickname'].value" matSuffix mat-icon-button aria-label="Clear" (click)="removeField('nickname')">
                   <mat-icon>close</mat-icon>
                 </button>
               </mat-form-field>
@@ -42,7 +42,7 @@
 
           <div class="row__2">
             <mat-label class="margin">Giới tính </mat-label>
-            <mat-radio-group aria-label="Select an option" [formControl]="disableSelect" [(ngModel)]="selectValue">
+            <mat-radio-group aria-label="Select an option" [formControl]="disableSelect" [(ngModel)]="selectValue" color="primary">
               <mat-radio-button class="margin" value="nam">Nam</mat-radio-button>
               <mat-radio-button class="margin" value="nu">Nữ</mat-radio-button>
               <mat-radio-button class="margin" value="khac" >Khác</mat-radio-button>
@@ -61,8 +61,18 @@
           <div class="row__3">
             <mat-form-field class="comment">
               <mat-label>Lời Chúc</mat-label>
-              <textarea matInput rows="1" matTextareaAutosize [(ngModel)]="comment"></textarea>
+              <textarea matInput required rows="1" matTextareaAutosize formControlName="comment"></textarea>
             </mat-form-field>
+          </div>
+
+          <div *ngIf="wishForm.controls['name'].hasError('required') && (wishForm.controls['name'].dirty || wishForm.controls['name'].touched)" class="alert alert-danger">
+            Họ Và Tên là ô bắt buộc*
+          </div>
+          <div *ngIf="wishForm.controls['nickname'].hasError('required') && (wishForm.controls['nickname'].dirty || wishForm.controls['nickname'].touched)" class="alert alert-danger">
+            Biệt danh là ô bắt buộc*
+          </div>
+          <div *ngIf="wishForm.controls['comment'].hasError('required') && (wishForm.controls['comment'].dirty || wishForm.controls['comment'].touched)" class="alert alert-danger">
+            Lời Chúc là ô bắt buộc*
           </div>
 
           <div class="row__4">
