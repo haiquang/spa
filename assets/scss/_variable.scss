@@ -1,0 +1,29 @@
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
+
+// Define your application's custom theme.
+// $primary: mat-palette($mat-indigo);
+// $accent:  mat-palette($mat-pink, A200, A100, A400);
+// $theme: mat-light-theme($primary, $accent);
+$green-pallet: mat-palette($mat-green, 400);
+$grey-pallet: mat-palette($mat-gray, 300);
+$green: mat-color($green-pallet);
+$green-dark: #5e9a8e;
+$grey: mat-color($grey-pallet);
+$light-grey: #f9f9f9;
+$white: #fff;
+
+@mixin font-doris {
+  font-family: "Doris";
+}
+
+@mixin font-lobster {
+  font-family: "Lobster";
+}
+
+@mixin font-dancing {
+  font-family: "Dancing";
+}
+
+
+
