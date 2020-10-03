@@ -14,7 +14,7 @@ export class GalleryComponent implements OnInit {
   mode: boolean;
   isotope: any;
   time: number;
-  MAX_NUMBER = 3;
+  MAX_NUMBER = 4;
   imageLoaded = {};
   constructor(private database: DatabaseService, public dialog: MatDialog) { }
 

@@ -3,7 +3,7 @@
 .couple__view {
   position: relative;
   z-index: 51;
-  padding: 120px 60px;
+  padding: 60px 60px;
   background-color: white;
 
   .introduce {
@@ -11,7 +11,7 @@
     flex-wrap: wrap;
 
     & > div {
-      min-height: 400px;
+      min-height: 100px;
     }
 
     .groom, .bride {
@@ -24,11 +24,8 @@
       }
 
       .image {
-        background-color: $grey;
-        @media screen and (max-width: 575px){
-          & {
-            display: none;
-          }
+        img {
+          width: 100%;
         }
       }
 

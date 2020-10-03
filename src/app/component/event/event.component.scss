@@ -1,7 +1,7 @@
 @import 'variable';
 
 .event__view {
-  padding: 120px 60px;
+  padding: 60px 60px;
 
   .event-header {
     position: relative;
@@ -83,20 +83,21 @@
   .event-content {
     display: flex;
     flex-direction: row;
-    min-height: 300px;
+    min-height: 100px;
+    padding: 30px 0;
 
     & > .image {
-      flex: 1;
-      background-color: $grey;
-      @media screen and (max-width: 575px){
-        & {
-          display: none;
-        }
+      flex: 2;
+      display: flex;
+      place-items: center;
+
+      img {
+        width: 100%;
       }
     }
 
     & > .view {
-      flex: 2;
+      flex: 3;
       padding: 0 20px 0 30px;
 
       .gim {

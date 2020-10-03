@@ -16,7 +16,7 @@
         <button mat-raised-button [ngClass]="{'active': mode}" (click)="setFilter(true)">Tất Cả</button>
       </div>
       <div class="grid">
-        <mat-card class="grid-item" *ngFor="let item of items; let i = index" [ngClass]="{'even': item.number % 3 === 0}" (click)="showImage(i)">
+        <mat-card class="grid-item" *ngFor="let item of items; let i = index" [ngClass]="{'even': item.number % 4 === 0}" (click)="showImage(i)">
           <div class="spinner" *ngIf="!imageLoaded[i]"><mat-spinner color="md-green"></mat-spinner></div>
           <img [src]="item.src" (load)="loaded(i)"/>
         </mat-card>
