@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DatabaseService } from 'src/app/services/database/database.service';
-import { PictureDetailComponent } from './picture-detail/picture-detail.component';
 import { AppConst } from 'src/app/constant/app-const';
 declare var Isotope: any;
 @Component({
