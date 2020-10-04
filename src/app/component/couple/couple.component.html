@@ -1,36 +1,42 @@
 <div class="couple__view">
-    <mat-card>
-      <div class="introduce">
-        <div class="groom">
-          <div class="image" fxShow="true" fxHide.lt-md="true">
-            <img src="assets/photo/CR.jpg"/>
-          </div>
-          <div class="inner">
-            <div class="inner-view">
-              <div class="title">chú rể</div>
-              <div class="content">
-                <p>Chào Thư, Anh là Quảng.</p>
-                <p>Ngoài trời đã đổ cơn mưa rồi, sao em cứ mải chạy loanh quanh thế. Mau vào trong tim anh mà trú này.....</p>
-              </div>
-              <div class="signature">- Quảng</div>
-            </div>
-          </div>
+  <mat-card>
+    <div class="introduce">
+      <div class="groom">
+        <div class="image" fxShow="true" fxHide.lt-md="true">
+          <img src="assets/photo/CR.jpg"/>
         </div>
-        <div class="bride">
-          <div class="inner">
-            <div class="inner-view">
-              <div class="title">cô dâu</div>
-              <div class="content">
-                <p>Eo ôi, sến quá, </p>
-                <p>Hay mình vào UBND Phường trú mưa đi anh, tiện thể đăng kí kết hôn nè...</p>
-              </div>
-              <div class="signature">Thư -</div>
-            </div>
+        <div class="inner">
+          <div class="background-innervew" #parentElement1>
+            <img #background1 src="assets/photo/background.png" (load)="initRainy(1)" />
           </div>
-          <div class="image" fxShow="true" fxHide.lt-md="true">
-            <img src="assets/photo/CD.jpg"/>
+          <div class="inner-view">
+            <div class="title">chú rể</div>
+            <div class="content">
+              <p>Chào Thư, Anh là Quảng.</p>
+              <p>Ngoài trời đã đổ cơn mưa rồi, sao em cứ mải chạy loanh quanh thế. Mau vào trong tim anh mà trú này.....</p>
+            </div>
+            <div class="signature">- Quảng</div>
           </div>
         </div>
       </div>
-    </mat-card>
+      <div class="bride">
+        <div class="inner">
+          <div class="background-innervew" #parentElement2>
+            <img #background2 src="assets/photo/background.png" (load)="initRainy(2)" />
+          </div>
+          <div class="inner-view">
+            <div class="title">cô dâu</div>
+            <div class="content">
+              <p>Eo ôi, sến quá, </p>
+              <p>Hay mình vào UBND Phường trú mưa đi anh, tiện thể đăng kí kết hôn nè...</p>
+            </div>
+            <div class="signature">Thư -</div>
+          </div>
+        </div>
+        <div class="image" fxShow="true" fxHide.lt-md="true">
+          <img src="assets/photo/CD.jpg"/>
+        </div>
+      </div>
+    </div>
+  </mat-card>
 </div>

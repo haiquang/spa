@@ -24,10 +24,29 @@
       }
 
       .image {
+        position: relative;
+
         img {
           width: 100%;
+          height: 100%;
         }
       }
+
+      .inner {
+        position: relative;
+
+        .background-innervew {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
 
       .inner-view {
         @include font-doris;
@@ -36,6 +55,9 @@
         height: 100%;
         justify-content: center;
         flex-direction: column;
+        position: absolute;
+        background: transparent;
+        z-index: 100;
 
         .title {
           letter-spacing: 5px;
