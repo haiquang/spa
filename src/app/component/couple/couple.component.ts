@@ -22,28 +22,30 @@ export class CoupleComponent implements OnInit {
   }
 
   initRainy(index) {
-    let element, parentElement;
-    switch (index) {
-      case 1:
-        element = this.background1.nativeElement;
-        parentElement = this.parentElement1.nativeElement;
-        break;
-      case 2:
-        element = this.background2.nativeElement;
-        parentElement = this.parentElement2.nativeElement;
-        break;
-      default: break;
-    }
-    const rainyDay = new Rainy({
-      image: element,
-      parentElement: parentElement
-    });
+    setTimeout(() => {
+      let element, parentElement;
+      switch (index) {
+        case 1:
+          element = this.background1.nativeElement;
+          parentElement = this.parentElement1.nativeElement;
+          break;
+        case 2:
+          element = this.background2.nativeElement;
+          parentElement = this.parentElement2.nativeElement;
+          break;
+        default: break;
+      }
+      const rainyDay = new Rainy({
+        image: element,
+        parentElement: parentElement
+      });
 
-    rainyDay.trail = rainyDay.TRAIL_SMUDGE;
+      rainyDay.trail = rainyDay.TRAIL_SMUDGE;
 
-    rainyDay.rain([
-      [1, 3, 5]
-    ], 500);
+      rainyDay.rain([
+        [3, 5, 5]
+      ], 500);
+    }, 300);
   }
 
 }

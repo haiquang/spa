@@ -23,7 +23,7 @@
             <div>
               <mat-form-field>
                 <mat-label>Họ Và Tên</mat-label>
-                <input matInput required type="text" formControlName="name">
+                <input matInput required type="text" formControlName="name" maxlength="30">
                 <button mat-button *ngIf="wishForm.controls['name'].value" matSuffix mat-icon-button aria-label="Clear" (click)="removeField('name')" color="basic">
                   <mat-icon>close</mat-icon>
                 </button>
@@ -32,7 +32,7 @@
             <div>
               <mat-form-field>
                 <mat-label>Biệt Danh</mat-label>
-                <input matInput required type="text" formControlName="nickname">
+                <input matInput required type="text" formControlName="nickname" maxlength="50">
                 <button mat-button *ngIf="wishForm.controls['nickname'].value" matSuffix mat-icon-button aria-label="Clear" (click)="removeField('nickname')">
                   <mat-icon>close</mat-icon>
                 </button>
@@ -61,7 +61,7 @@
           <div class="row__3">
             <mat-form-field class="comment">
               <mat-label>Lời Chúc</mat-label>
-              <textarea matInput required rows="1" matTextareaAutosize formControlName="comment"></textarea>
+              <textarea matInput required rows="1" matTextareaAutosize formControlName="comment" maxlength="255"></textarea>
             </mat-form-field>
           </div>
 
