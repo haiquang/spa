@@ -25,7 +25,7 @@ export class WishesComponent implements OnInit {
               public dialog: MatDialog, private formbuilder: FormBuilder) {
     this.wishForm = this.formbuilder.group({
       'name': [null, Validators.required],
-      'nickname': [null, Validators.required],
+      'nickname': [null],
       'comment': [null, Validators.required]
     });
   }
@@ -42,7 +42,7 @@ export class WishesComponent implements OnInit {
       // You will get form value if your form is valid
       const formValues = this.wishForm.getRawValue();
       let wishesObj = this.database.getWishes();
-      const now = this.datePipe.transform(Date.now(), 'yyyyMMdd');
+      const now = this.datePipe.transform(Date.now(), 'dd-MM-yyyy');
       if (wishesObj) {
         if (!wishesObj[now]) {
           wishesObj[now] = [];
@@ -89,15 +89,21 @@ export class WishesComponent implements OnInit {
       } else {
         wishesObj = {};
       }
-      this.database.update(wishesObj);
+      this.database.update(wishesObj).then(res => {
+        const successOpen = this.dialog.open(AlertComponent, {
+          data: {
+            title: 'Thành Công',
+            content: 'Bạn đã gởi lời chúc thành công đến Cô Dâu/Chú Rể. Cảm ơn và hẹn gặp lại ở buổi tiệc nhé!',
+            type: AppConst.POPUP.SUCCESS
+          }
+        });
 
-      this.dialog.open(AlertComponent, {
-        data: {
-          title: 'Thành Công',
-          content: 'Bạn đã gởi lời chúc thành công đến Cô Dâu/Chú Rể. Cảm ơn và hẹn gặp lại ở buổi tiệc nhé!',
-          type: AppConst.POPUP.SUCCESS
-        }
+        successOpen.afterClosed().subscribe(result => {
+          this.selectValue = '';
+          this.wishForm.reset();
+        });
       });
+
     }
   }
 

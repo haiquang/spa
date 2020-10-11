@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 
 @Injectable({
@@ -12,11 +12,14 @@ export class DatabaseService {
   private wishesObj;
   private images = [];
   private imageObse: Observable<any>;
+  public wishesObjectCame: Subject<any>;
 
   constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) {
     this.wishesDbs = this.db.object('wishes');
+    this.wishesObjectCame = new Subject();
     this.wishesDbs.valueChanges().subscribe(arg => {
       this.wishesObj = arg;
+      this.wishesObjectCame.next();
     });
   }
 
@@ -25,11 +28,11 @@ export class DatabaseService {
   }
 
   save(obj) {
-    this.wishesDbs.set(obj);
+    return this.wishesDbs.set(obj);
   }
 
   update(obj) {
-    this.wishesDbs.update(obj);
+    return this.wishesDbs.update(obj);
   }
 
   delete() {

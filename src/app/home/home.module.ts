@@ -17,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MdePopoverModule } from '@material-extended/mde';
 import { AlertComponent } from '../component/dialog/alertDialog/alert/alert.component';
 import { PictureDetailComponent } from '../component/gallery/picture-detail/picture-detail.component';
+import { WishesListComponent } from '../component/wishes-list/wishes-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PictureDetailComponent } from '../component/gallery/picture-detail/pict
     WishesComponent,
     GalleryComponent,
     AlertComponent,
-    PictureDetailComponent
+    PictureDetailComponent,
+    WishesListComponent
   ],
   imports: [
     CommonModule,

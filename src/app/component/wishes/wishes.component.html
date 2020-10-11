@@ -32,7 +32,7 @@
             <div>
               <mat-form-field>
                 <mat-label>Biệt Danh</mat-label>
-                <input matInput required type="text" formControlName="nickname" maxlength="50">
+                <input matInput type="text" formControlName="nickname" maxlength="50">
                 <button mat-button *ngIf="wishForm.controls['nickname'].value" matSuffix mat-icon-button aria-label="Clear" (click)="removeField('nickname')">
                   <mat-icon>close</mat-icon>
                 </button>

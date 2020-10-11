@@ -107,10 +107,15 @@
           flex: 1;
           padding: 0 5px;
           color: $green-dark;
+          align-self: center;
         }
 
         span {
           flex: 9;
+
+          p {
+            margin: 5px 0;
+          }
         }
       }
     }

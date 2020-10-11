@@ -66,12 +66,17 @@ export class Rainy {
     this.pause();
     this.canvas.parentNode.removeChild(this.canvas);
 
+    this.options.parentElement.parentNode.style.height = 'auto';
+
     if (this.bckStyle) {
       this.imgSource.style.background = this.bckStyle.background;
     }
+    const test = this;
 
-    Object.keys(this).forEach(function (item) {
-      delete this[item];
+    Object.keys(test).forEach(function (item) {
+      if (typeof test[item] !== undefined) {
+        delete test[item];
+      }
     });
   }
 
@@ -184,6 +189,9 @@ export class Rainy {
   }
 
   checkSize() {
+    if (!this.canvas) {
+      return;
+    }
     let { width, height, offsetLeft, offsetTop } = this.canvas;
 
     const source = this.options.parentElement.getBoundingClientRect();
@@ -223,6 +231,10 @@ export class Rainy {
   }
 
   animateDrops() {
+    if (!Object.keys(this).length) {
+      return;
+    }
+
     if (this.addDropCallback) {
       this.addDropCallback();
     }
@@ -243,6 +255,7 @@ export class Rainy {
   }
 
   resume() {
+    console.warn('RESUME');
     this.requestID = this.requestAnimFrame(this.animateDrops.bind(this));
   }
 
@@ -290,6 +303,7 @@ export class Rainy {
   }
 
   rain(presets, speed) {
+    console.warn('RAIN');
     // prepare canvas for drop reflections
     if (this.reflection !== this.REFLECTION_NONE) {
       this.prepareReflections();
