@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DatabaseService } from 'src/app/services/database/database.service';
 
 @Component({
@@ -11,8 +12,10 @@ export class WishesListComponent implements OnInit {
   disabledBtnLeft = false;
   disabledBtnRight = false;
   time: any;
+  dataForDisplay: any = {};
   @ViewChild('wishesContainer', {static: false}) wishesListElement: ElementRef;
   @ViewChild('matCardContainer', {static: false}) matCardElement: ElementRef;
+  @ViewChild('detailView', {static: false}) detailView: ElementRef;
 
   constructor(private elementRef: ElementRef, private database: DatabaseService) {
   }
@@ -44,6 +47,10 @@ export class WishesListComponent implements OnInit {
           this.wishesList.push(tempInfor);
         });
       }
+    });
+
+    this.wishesList = this.wishesList.sort((before, after) => {
+      return after.timestamp - before.timestamp;
     });
 
     this.wishesList.forEach((data, index) => {
@@ -132,6 +139,28 @@ export class WishesListComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  showDetail(index) {
+    const data = this.wishesList[index];
+    this.dataForDisplay = {
+      name: data.name,
+      content: data.comment
+    };
+  }
+
+  removeDetail() {
+    this.dataForDisplay = {};
+  }
+
+  getStyle() {
+    if (this.dataForDisplay.name) {
+      return {
+        visibility: 'visible',
+        opacity: 1
+      };
+    }
+    return '';
   }
 
 }

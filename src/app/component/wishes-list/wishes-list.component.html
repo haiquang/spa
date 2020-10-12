@@ -1,4 +1,4 @@
-<div class="wishes-list-view">
+<div class="wishes-list-view" *ngIf="wishesList && wishesList.length">
   <mat-card id="mat-card" >
     <div #matCardContainer class="mat-card">
       <div class="line-background">
@@ -11,8 +11,18 @@
         <mat-icon>chevron_right</mat-icon>
       </button>
       <div *ngIf="wishesList" class="wisheslist-container" #wishesContainer (scroll)="scrollHandler($event)">
-        <canvas *ngFor="let item of wishesList; let i = index" class="canvas" id="canvas-{{i}}"></canvas>
+        <canvas *ngFor="let item of wishesList; let i = index" class="canvas" id="canvas-{{i}}" (click)="showDetail(i)"></canvas>
       </div>
     </div>
   </mat-card>
+</div>
+<div #detailView class="detail-view" (click)="removeDetail()" [ngStyle]="getStyle()">
+  <div class="detail-view-background"></div>
+  <div class="img-container">
+    <div class="text">
+      <div class="from"><b>From: {{dataForDisplay.name}}</b></div>
+      <div class="content">{{dataForDisplay.content}}</div>
+    </div>
+    <img src="assets/photo/paper.jpg">
+  </div>
 </div>

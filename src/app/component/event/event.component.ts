@@ -13,7 +13,6 @@ export class EventComponent implements OnInit {
   constructor(public myElement: ElementRef) { }
 
   ngOnInit(): void {
-    console.log(this.myElement.nativeElement);
   }
 
 }

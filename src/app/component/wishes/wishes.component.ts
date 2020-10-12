@@ -83,7 +83,8 @@ export class WishesComponent implements OnInit {
             comment: formValues.comment,
             gender: this.selectValue || '',
             ipAdress: this.ipAdress,
-            userAgent: this.userAgent
+            userAgent: this.userAgent,
+            timestamp: Date.now()
           });
         }
       } else {
