@@ -80,10 +80,10 @@ export class WishesListComponent implements OnInit {
           canvas.width = img.width;
           canvas.height = img.height;
           ctx.drawImage(img, 0, 0, img.width, img.height);
-          ctx.font = '16px Doris';
+          ctx.font = '16px Dancing';
           ctx.fillText('From', 20, 80);
           local.wrapText(ctx, name, 15, 110, 95, 16);
-          ctx.font = '10px Doris';
+          ctx.font = '10px Dancing';
           ctx.fillText(datetime, 20, 180);
 
           if (index === (local.wishesList.length - 1) && typeof callback === 'function') {
