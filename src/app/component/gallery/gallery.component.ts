@@ -34,6 +34,25 @@ export class GalleryComponent implements OnInit {
           this.isotope.arrange({filter: '.even'});
         }
       }, 500);
+    }, err => {
+      this.database.getImagesFromGoogleCloud().subscribe((data: any) => {
+        data.forEach((src) => {
+          this.items.push({src, number: this.getRandomNum()});
+        });
+
+        setTimeout(() => {
+          const grid = document.querySelector('.grid');
+          this.isotope = new Isotope(grid, {
+            itemSelector: '.grid-item',
+            layoutMode: 'masonry',
+          });
+
+          if (!this.mode) {
+            this.isotope.arrange({filter: '.even'});
+          }
+        }, 500);
+      });
+
     });
   }
 
