@@ -16,6 +16,7 @@ export class DatabaseService {
   public wishesObjectCame: Subject<any>;
 
   googleApi = 'https://storage.googleapis.com/';
+  weddingLocal = './assets/hinhcuoi/';
 
 
   constructor(private db: AngularFireDatabase, private storage: AngularFireStorage, private http: HttpClient) {
@@ -65,7 +66,7 @@ export class DatabaseService {
       this.http.get(`${this.googleApi}storage/v1/b/confident-pen-138413.appspot.com/o`).subscribe((res: any) => {
         if (res && res.items && res.items.length) {
           res.items.map((item) => {
-            const url = `${this.googleApi}${item.bucket}/${item.name}`;
+            const url = `${this.weddingLocal}${item.name}`;
             data.push(url);
           });
         }
