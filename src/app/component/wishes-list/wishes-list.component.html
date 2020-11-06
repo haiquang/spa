@@ -4,10 +4,10 @@
       <div class="line-background">
         <div class="horizontal-line"></div>
       </div>
-      <button class="left" mat-fab color="primary" aria-label="Example icon button with a delete icon" [disabled]="disabledBtnLeft" (click)="goTo(-1, $event)">
+      <button class="left" mat-fab color="primary" aria-label="Example icon button with a delete icon" *ngIf="!disabledBtnLeft" (click)="goTo(-1, $event)">
         <mat-icon>chevron_left</mat-icon>
       </button>
-      <button class="right" mat-fab color="primary" aria-label="Example icon button with a delete icon" [disabled]="disabledBtnRight" (click)="goTo(1, $event)">
+      <button class="right" mat-fab color="primary" aria-label="Example icon button with a delete icon" *ngIf="!disabledBtnRight" (click)="goTo(1, $event)">
         <mat-icon>chevron_right</mat-icon>
       </button>
       <div *ngIf="wishesList" class="wisheslist-container" #wishesContainer (scroll)="scrollHandler($event)">
